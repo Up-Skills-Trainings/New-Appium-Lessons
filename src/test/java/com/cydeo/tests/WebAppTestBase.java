@@ -18,6 +18,8 @@ public class WebAppTestBase {
     public void SetUpWebTest(){
         UiAutomator2Options options = new UiAutomator2Options();
         options.withBrowserName(MobileBrowserType.CHROME);
+        // options.setChromedriverExecutable("/Users/oscar/IdeaProjects/AppiumTests/chromedriver");
+
         URL url;
         try {
             url = new URL("http://localhost:4723/");
