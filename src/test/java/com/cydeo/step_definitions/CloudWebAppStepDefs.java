@@ -36,6 +36,5 @@ public class CloudWebAppStepDefs {
     @Then("User verifies successful login action")
     public void userVerifiesSuccessfulLoginAction() {
         Assertions.assertTrue(page.menuItems.isDisplayed());
-        Driver.closeDriver();
     }
 }

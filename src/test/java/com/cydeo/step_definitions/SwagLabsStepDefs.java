@@ -18,9 +18,11 @@ public class SwagLabsStepDefs {
     @When("User navigates to login page of swaglabs native application on {string}")
     public void user_navigates_to_login_page_of_swaglabs_native_application_on(String env) {
        page = new SwagLabAppPage(env+"-swagPlatform");
+       MobileUtils.wait(3);
     }
     @When("User logins with valid username and password")
     public void user_logins_with_valid_username_and_password() {
+        MobileUtils.wait(2);
         page.userNameBox.sendKeys(username);
         page.passwordBox.sendKeys(password);
         page.LoginButton.click();
@@ -30,7 +32,6 @@ public class SwagLabsStepDefs {
     @Then("Verifies user can see a sample product item on the homepage")
     public void verifies_user_can_see_a_sample_product_item_on_the_homepage() {
         Assertions.assertTrue(page.sampleItem.getText().contains("Sauce"));
-        Driver.closeDriver();
     }
 
 
