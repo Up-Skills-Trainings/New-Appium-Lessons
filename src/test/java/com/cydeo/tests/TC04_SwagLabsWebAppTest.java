@@ -18,7 +18,7 @@ public class TC04_SwagLabsWebAppTest extends WebAppTestBase{
 
 
     @Test
-    public void LoginTest() {
+    public void loginTest() {
         // Navigate to https://www.saucedemo.com/v1/
         driver.get("https://www.saucedemo.com/v1/");
 

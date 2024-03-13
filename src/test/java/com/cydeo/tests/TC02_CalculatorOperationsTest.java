@@ -18,7 +18,7 @@ public class TC02_CalculatorOperationsTest {
      */
     AndroidDriver driver;
     @BeforeEach
-    public void TestSetUp(){
+    public void testSetUp(){
         UiAutomator2Options options = new UiAutomator2Options();
         options.setApp("https://cybertek-appium.s3.amazonaws.com/calculator.apk");
         try {
@@ -28,11 +28,11 @@ public class TC02_CalculatorOperationsTest {
         }
     }
     @AfterEach
-    public void Teardown(){
+    public void tearDown(){
         driver.quit();
     }
     @Test
-    public void AddingTest(){
+    public void addingTest(){
         // Locate elements of numbers, lets add 4 and 5
         WebElement n_four = driver.findElement(By.id("com.google.android.calculator:id/digit_4"));
         n_four.click();

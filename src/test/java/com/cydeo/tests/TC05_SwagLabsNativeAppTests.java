@@ -17,7 +17,7 @@ public class TC05_SwagLabsNativeAppTests {
     String password = ConfigurationReader.getProperty("password");
 
     @Test
-    public void SignInTest(){
+    public void signInTest(){
         AppiumDriver driver = Driver.getDriver("local-swagPlatform");
 
         driver.findElement(new AppiumBy.ByAccessibilityId("test-Username")).sendKeys(username);
@@ -41,7 +41,7 @@ public class TC05_SwagLabsNativeAppTests {
 
 
     @Test
-    public void SignInTestWithPOM(){
+    public void signInTestWithPOM(){
 
         SwagLabAppPage page = new SwagLabAppPage("local-swagPlatform");
 

@@ -15,7 +15,7 @@ public class WebAppTestBase {
     protected AndroidDriver driver;
 
     @BeforeEach
-    public void SetUpWebTest(){
+    public void setUpWebTest(){
         UiAutomator2Options options = new UiAutomator2Options();
         options.withBrowserName(MobileBrowserType.CHROME);
         // options.setChromedriverExecutable("/Users/oscar/IdeaProjects/AppiumTests/chromedriver");
