@@ -1,0 +1,51 @@
+Mobile testing is Front-End testing
+Appium which is a wrapper for Selenium API
+Famous because it can automate both android and ios devices
+***Also testing web app and native app
+
+** PIQ: What is emulator or simulator?
+emulator is a virtual device that acts like real Android phone
+simulator is a virtual device that acts like real iphone
+
+PIQ:
+UiAutomator2 Driver - ANdroid
+XCUITEST Driver - IOS
+
+[Appium] Available drivers:
+[Appium]   - uiautomator2@2.29.2 (automationName 'UiAutomator2')
+[Appium]   - xcuitest@7.0.1 (automationName 'XCUITest')
+
+Appium supports multiple languages: Java, JS, Python C#
+- Javascript with webdriverio test framework
+
+Appium Have two tools that you need for automation
+Appium Server -- communicates your code to the devices
+Appium Client -- The dependency at your project (library)
+
+We can test Mobile view at regular browsers developer tools
+- chrome- inspect - toggle device toolbar and select different views
+- important manual testing
+
+Steps to create an Android driver for automation:
+ AndroidDriver driver; - declare driver
+ URL url;  - declare url for appium server
+ UiAutomator2Options options = new UiAutomator2Options();
+        **** Options-settings for test automation (wait, app etc.)
+        try {
+            url = new URL("http://localhost:4723/");
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }  ------create the URL and handle exception
+
+        driver = new AndroidDriver(url,options); -- initialize driver with url and options objects
+
+
+
+Task 02:
+will automate a native app etsy.apk, will provide this from test directory
+use singleton Driver concept
+
+
+
+
+BREAK UNTIL 11:05 AM EST
