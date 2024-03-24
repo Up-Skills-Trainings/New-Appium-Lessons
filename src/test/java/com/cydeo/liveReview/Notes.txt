@@ -46,6 +46,11 @@ will automate a native app etsy.apk, will provide this from test directory
 use singleton Driver concept
 
 
+Resume:
+* Selenium, Java ---tools used  , add Appium for Mobile Testing - capabilities
+* What kind of testing : In your company, you automated Native App of your application on Android devices
+* Why android ?  --- our mobile customers are %80 using Android
+* Cucumber framework, singleton Driver, Page Object Model : framework structure for Mobile Testing
+* I did manual Mobile testing with real devices that company provides
 
 
-BREAK UNTIL 11:05 AM EST

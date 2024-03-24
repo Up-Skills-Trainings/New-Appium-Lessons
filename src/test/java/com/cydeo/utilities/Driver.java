@@ -20,6 +20,7 @@ public class Driver {
 
     private static UiAutomator2Options caps = new UiAutomator2Options();
 
+
     private Driver(){
 
     }
@@ -27,6 +28,8 @@ public class Driver {
     public static AppiumDriver getDriver(String platformType){
         String platform = ConfigurationReader.getProperty(platformType);
         if(Objects.isNull(driver)) {
+            String testDir = System.getProperty("user.dir");
+
             switch (platform) {
                 case "android-calculator":
                     caps.setApp("https://cybertek-appium.s3.amazonaws.com/calculator.apk");
@@ -38,7 +41,7 @@ public class Driver {
                     driver = new AndroidDriver(url, caps);
                     break;
                 case "local-android-swaglabs":
-                    String testDir = System.getProperty("user.dir");
+
                     caps.setApp(testDir + "/swaglabsApp.apk");
                     caps.setAppPackage("com.swaglabsmobileapp");
                     caps.setAppActivity("com.swaglabsmobileapp.MainActivity");
@@ -104,6 +107,17 @@ public class Driver {
                         throw new RuntimeException(e);
                     }
                     driver = new IOSDriver(url, capsIR);
+                    break;
+                case "local-android-etsy":
+                    caps.setApp(testDir+"/etsy.apk");
+                    caps.setAppPackage("com.etsy.android");
+                    caps.setAppActivity("com.etsy.android.ui.user.auth.SignInActivity");
+                    try {
+                        url = new URL("http://localhost:4723/");
+                    } catch (MalformedURLException e) {
+                        throw new RuntimeException(e);
+                    }
+                    driver = new AndroidDriver(url,caps);
                     break;
 
             }
