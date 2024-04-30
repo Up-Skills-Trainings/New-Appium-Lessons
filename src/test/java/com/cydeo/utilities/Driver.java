@@ -85,8 +85,7 @@ public class Driver {
                     MutableCapabilities capsIR = new MutableCapabilities();
                     capsIR.setCapability("platformName", "iOS");
                     capsIR.setCapability("appium:app", "https://github.com/saucelabs/sample-app-mobile/releases/download/2.7.1/iOS.RealDevice.SauceLabs.Mobile.Sample.app.2.7.1.ipa");  // The filename of the mobile app
-                    capsIR.setCapability("appium:deviceName", "iPhone Simulator");
-                    capsIR.setCapability("appium:platformVersion", "current_major");
+                    capsIR.setCapability("appium:deviceName", "iPhone.*");
                     capsIR.setCapability("appium:automationName", "XCUITest");
                     capsIR.setCapability("appPackage","com.swaglabsmobileapp");
                     capsIR.setCapability("appActivity","com.swaglabsmobileapp.SplashActivity");
