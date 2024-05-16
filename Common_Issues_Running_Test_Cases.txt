@@ -1,0 +1,65 @@
+IMPORTANT NOTE:
+Before you run any of the foolowing test cases:
+1. Make sure you have completed installation correctly, you can check with Appium Doctor
+Run the following on the command line
+     appium-doctor
+
+If necessary tools such as: JAVA, ANDROID and Node.js are green, installation is correct.
+If not green, re-watch and read instructions carefully and try install steps again.
+
+2. Before you run any test case - start appium server by running following command at Command Line:
+          appium
+
+   Start your emulator from Android Studio Code, you can use Pixel 5 Android 11 version.
+
+3. If you are using appium inspector, your appium server should be running. After inspecting elements, if you run any test case from IntelliJ, inspector and emulator connection stops. So you need to start session with inspector again.
+
+Our students get problems sometimes running following test cases, so I created common solutions for common problems.
+
+Name of the test case: TC01_FirstAppiumTest 
+Purpose of the test: to establish connection with Mobile Device
+Prerequisites:  Appium Server Running, Emulator Open, Latest Dependency and Appium-Doctor gives necessary settings as green
+Common problem: Not using proper version of appium client dependency
+       <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>9.2.2</version>
+            <scope>test</scope>
+        </dependency>
+
+Name of the test case:TC02_CalculatorOperationsTest
+Purpose of the test: Interacting with Native App - we are downloading the apk from a server
+We learned how to locate elements: Appium Inspector (malocius software - you needed to allow running)
+if you are using browser version of Appium inspector start the server with "appium --allow-cors"
+https://inspector.appiumpro.com/
+If you loose connection between inspector and emulator, just quit session and re-start again
+Common problem: Using @Test annotation and @BeforeEach annotations from different libraries of Junit.
+Make sure you have only following import statement in your test classes:
+import org.junit.jupiter.api.*;
+
+
+Name of the test case:TC03_CalculatorPOM_Test
+Purpose of the test: To understand POM with Mobile Testing
+Common problem:You neeed to use following annotation in your page object model
+ @AndroidFindBy
+
+
+Name of the test case:TC04_SwagLabsWebAppTest
+Purpose of the test: to show difference between Native app and WebApp
+Common problem: Appium has problems downloading the chrome driver for the emulator
+you need chrome driver - which is in your mobile device
+Run following to start appium:
+appium --allow-insecure chromedriver_autodownload
+If you have issues continue no matter what just delete your emulator (kill it) the create a new one.
+Also watch my short video 7 for handling these problems.
+
+Name of the test case:TC05_SwagLabsNativeAppTests
+Purpose of the test: To simulate a real work environment app scenario
+- you provide apk file from project root
+- POM for elements
+- Login scenario of the application
+- conf.prop file to call for different platform types
+
+After TC05 the main concern of the project is to have a framework structure:
+Test Framework provides a structure that can be re-used, organized to run in a Smoke Test suit
+Cucumber Framework for Mobile Testing

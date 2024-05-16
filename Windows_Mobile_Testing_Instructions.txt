@@ -1,0 +1,89 @@
+
+Windows Systems
+
+*** What do I need to install in order to do Mobile Testing on Windows? ***
+
+Documentation: For all Mobile Testing subjects we will be using Appium, and main documentation for this is here: https://appium.io/docs/en/2.1/
+
+Important Note: For all commands you will run, use Command Prompt or Power Shell as administrator
+
+1. At least JDK version 11 or a later version needs to be installed 
+https://www.oracle.com/java/technologies/downloads/
+You might already have installed JDK, to check it, open the terminal and run the command:
+$ java --version 
+
+2. Install NodeJS (latest LTS as of today) https://nodejs.org/en/
+Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.
+npm is a package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js. 
+
+Verify installation with node -v and npm -v on the command line
+ node -v  or node --version
+ npm -v.  or npm --version
+
+3. Install Android Studio https://developer.android.com/studio
+(Simple installation - Always Next - Do not import Settings (if it asks) - For Data Sharing Don’t Send - Install Type Standard - Finish-Choose SDK Manager)
+Open Android Studio click on Configure and select AVD Manager:
+Click at Create Virtual Device:
+Proceed with Pixel 5 and hit Next:
+Download Android 11 by clicking on Download link and following installation instructions.
+
+For windows users you might get error installing Android Studio if your virtualization setting
+is not enabled from BIOS settings.
+To fix this, I will share some links and videos from youtube.
+https://stackoverflow.com/questions/67319710/how-to-enable-vmx-in-the-haxm-installation https://www.geeksforgeeks.org/how-to-enable-virtualization-vt-x-in-windows-10-bios/
+https://www.youtube.com/watch?v=NotoEFuNq9I&ab_channel=Infinetsoftsolutions
+
+Also if you have installation issue with HAXM, link is here: https://github.com/intel/haxm/releases
+https://www.youtube.com/watch?v=vt8UgRdUUm4&ab_channel=Infinetsoftsolutions
+
+
+4. Install Appium Server, you need to open your Comand Line and type either:
+
+    npm i appium -g
+    npm i --location=global appium
+
+
+After installing appium, now install driver:
+
+IMPORTANT: Install UiAutomator2 Driver
+Run This Command:
+   
+    appium driver install uiautomator2
+
+5. Install appium-doctor, you need to open your Comand Line and type either of following 
+    npm i appium-doctor -g 
+    npm i --location=global appium-doctor
+
+And execute setup verification by running following command on the terminal:
+      appium-doctor
+      WARN AppiumDoctor ✖ ANDROID_HOME is NOT set!
+      WARN AppiumDoctor ✖ JAVA_HOME is NOT set!
+
+      At this point appium-doctor will complain about ANDROID_HOME, JAVA_HOME environment variables 
+
+Let's fix environment variables first. 
+Setup ANDROID_HOME and JAVA_HOME: We have short videos for this at the LMS, watch those first
+Additional Videos: 
+https://stackoverflow.com/questions/26356359/error-android-home-is-not-set-and-android-command-not-in-your-path-you-must
+https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html
+
+
+6. Install Appium Inspector https://github.com/appium/appium-inspector/releases
+You can install the latest release. After installing your computer might now allow it to open.
+You can open your security settings of your computer and allow it to work.
+
+Alternatively you can use Browser Version of Appium Inspector without installing.
+When you use this version IMPORTANT start your Appium Server with:
+        appium --allow cors 
+
+7. Create a Maven project
+Add following to pom.xml
+
+    <dependencies>
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>9.2.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>

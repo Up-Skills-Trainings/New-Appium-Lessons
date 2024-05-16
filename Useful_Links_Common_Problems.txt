@@ -1,0 +1,84 @@
+
+**** USEFUL LINKS FOR MOBILE TESTING *****
+
+Mobile Testing Appium main documentation is here: https://appium.io/docs/en/2.1/
+
+Install link for latest JDK version https://www.oracle.com/java/technologies/downloads/
+
+Install link for NodeJS https://nodejs.org/en/
+
+Install link for Android Studio https://developer.android.com/studio
+
+Install link for Appium Inspector https://github.com/appium/appium-inspector/releases
+
+For chrome driver executables: https://chromedriver.storage.googleapis.com/index.html
+
+Appium inspector for Browser version: https://inspector.appiumpro.com/
+
+JAVA_HOME needs to be setup, and you can check here at this link: 
+https://
+confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html
+Enable virtualization if needed : https://www.geeksforgeeks.org/how-to-enable-virtualization-vtx-in-windows-10-bios/
+If you have installation issue with HAXM, link is here: https://github.com/intel/haxm/releases
+Setup ANDROID_HOME for Windows https://stackoverflow.com/questions/26356359/errorandroid-home-is-not-set-and-android-command-not-in-your-path-you-must
+TERMINAL / Command Line COMMANDS USED IN THE LESSON
+
+**** COMMON ISSUES AND POSSIBLE SOLUTIONS *****
+
+• To see hidden files on MacOS, press Command + Shift + . (dot)
+
+• To check installed java version java --version or java -v
+• Verify installation with node -v and npm -v or node --version
+• Install Appium Server, you need to open your Terminal and type either (npm i appium -g) or
+(npm i --location=global appium)
+• Install UiAutomator2 Driver : “appium driver install uiautomator2”
+
+• !!! Important Note for MacOS: To give access for node_modules you can use following command if necessary (if you get EACCESS denied error) 
+- sudo chown -R yourUserName:/usr/local/lib/
+Sudo is superuser can do anything.When you run this command it will ask you password 
+and when you are typing your password it will be INVISIBLE.
+Type it correctly and click ENTER
+- Chown : Change Owner - To quit Node click Ctrl+C twice (if needed)
+
+• Java and Android Home setup for MacOS - copy paste the following content to the .zprofile (.bash_profile for older macs):
+------------
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+export ANDROID_HOME=/Users/$(whoami)/Library/Android/sdk
+
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+
+export ANDROID_AVD_HOME=/Users/$(whoami)/.android/avd
+
+export PATH=$PATH:~/.local/bin$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/33.0.2:$JAVA_HOME/bin 
+-----------
+
+• To allow chrome driver install by Appium server run: `appium —allow-insecure
+chromedriver_autodownload`
+• To disable security for MacOS so chrome executable is allowed to run: `sudo spctl —masterdisable`. (Use with caution)
+• To understand your shell environment `echo $SHELL`
+/bin/bash: Indicates you are using Bash, and the configuration files may include .bashrc
+and/or .bash_profile.
+/bin/zsh: Indicates you are using Zsh, and the configuration file may include .zshrc.
+
+-----------------
+For windows users you might get error installing Android Studio if your virtualization setting
+is not enabled from BIOS settings.
+To fix this, I will share some links and videos from youtube.
+https://stackoverflow.com/questions/67319710/how-to-enable-vmx-in-the-haxm-installation https://www.geeksforgeeks.org/how-to-enable-virtualization-vt-x-in-windows-10-bios/
+https://www.youtube.com/watch?v=NotoEFuNq9I&ab_channel=Infinetsoftsolutions
+
+Also if you have installation issue with HAXM, link is here: https://github.com/intel/haxm/releases
+https://www.youtube.com/watch?v=vt8UgRdUUm4&ab_channel=Infinetsoftsolutions
+---------------------
+appium-doctor
+      WARN AppiumDoctor ✖ ANDROID_HOME is NOT set!
+      WARN AppiumDoctor ✖ JAVA_HOME is NOT set!
+
+      At this point appium-doctor will complain about ANDROID_HOME, JAVA_HOME environment variables 
+
+Let's fix environment variables first. 
+Setup ANDROID_HOME and JAVA_HOME: We have short videos for this at the LMS, watch those first
+Additional Videos: 
+https://stackoverflow.com/questions/26356359/error-android-home-is-not-set-and-android-command-not-in-your-path-you-must
+https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html
