@@ -82,3 +82,8 @@ Setup ANDROID_HOME and JAVA_HOME: We have short videos for this at the LMS, watc
 Additional Videos: 
 https://stackoverflow.com/questions/26356359/error-android-home-is-not-set-and-android-command-not-in-your-path-you-must
 https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html
+
+
+npm config set prefix '~/.npm-global'
+export PATH=~/.npm-global/bin:$PATH
+source ~/.zprofile
