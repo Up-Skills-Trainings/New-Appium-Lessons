@@ -12,6 +12,7 @@ public class CalculatorPage {
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getDriver("calculatorPlatform")),this); // driver object
     }
 
+
     @AndroidFindBy(accessibility = "multiply")
     public WebElement multiplyButton;
 
